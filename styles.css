@@ -391,6 +391,9 @@ section{padding:110px 8vw;}
   color:#3d6b74;
 }
 .map-toolbar-buttons{
+  font-family:'Space Mono', monospace;
+  font-size:11px;
+  font-weight:700;
   display:flex;
   gap:12px;
 }

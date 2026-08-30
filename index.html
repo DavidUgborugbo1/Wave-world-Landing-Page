@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WaveWorld — Chase the Current</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Work+Sans:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="logo">Wave<span>World</span></div>
+    <div class="nav-links">
+      <a href="#attractions">Attractions</a>
+      <a href="#tickets">Tickets</a>
+      <a href="#info">Plan Your Day</a>
+      <a href="#reports">Splash Reports</a>
+      <a href="map.html">Park Map</a>
+    </div>
+    <a href="#tickets" class="nav-cta">Get Tickets</a>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="sun"></div>
+    <div class="hero-content">
+      <span class="eyebrow">OPEN DAILY · 10AM – 7PM</span>
+      <h1><span class="hero-line hero-line-1">Chase the</span><span class="hero-line hero-line-2"><em>Current</em>.</span></h1>
+      <p>Six wave pools, four record-length slides, and one lazy river that never asks you to hurry. WaveWorld is 40 acres of everything the sun invented water for.</p>
+      <a href="#tickets" class="ticket-btn">
+        🎟 Get Your Wristband
+        <span class="stub-code">ADM · SINGLE DAY</span>
+      </a>
+    </div>
+
+    <div class="wave-wrap">
+      <svg viewBox="0 0 1440 220" preserveAspectRatio="none">
+        <path class="wave-anim-2" fill="#4FD1E0" fill-opacity="0.55" d="M0,120 C 240,180 480,60 720,110 C 960,160 1200,80 1440,120 L1440,220 L0,220 Z
+          M1440,120 C 1680,180 1920,60 2160,110 C 2400,160 2640,80 2880,120 L2880,220 L1440,220 Z"/>
+      </svg>
+      <svg viewBox="0 0 1440 180" preserveAspectRatio="none" style="margin-top:-40px;">
+        <path class="wave-anim-1" fill="#F5FBFC" d="M0,90 C 220,30 460,150 720,90 C 980,30 1220,150 1440,90 L1440,180 L0,180 Z
+          M1440,90 C 1660,30 1900,150 2160,90 C 2420,30 2660,150 2880,90 L2880,180 L1440,180 Z"/>
+      </svg>
+    </div>
+  </header>
+
+  <!-- ATTRACTIONS -->
+  <section id="attractions">
+    <div class="section-head">
+      <span class="eyebrow-dark">The Rides</span>
+      <h2>Pick your pace.</h2>
+      <p>From gut-drop speed slides to a river you can float for hours — every ride is sorted by how hard your heart will work.</p>
+    </div>
+    <div class="attractions-grid">
+
+      <div class="ride-card">
+        <img class="ride-img" src="images/ride5.jpg" alt="Kraken's Plunge">
+        <h3>Kraken's Plunge</h3>
+        <p>A near-vertical 60ft drop into total darkness before the tube spits you into the splash basin. Not for the faint of heart.</p>
+        <span class="ride-tag" style="background:rgba(255,107,91,0.15); color:var(--coral-pop);">High Intensity</span>
+      </div>
+
+      <div class="ride-card">
+        <img class="ride-img" src="images/ride1.jpg" alt="Riptide Racers">
+        <h3>Riptide Racers</h3>
+        <p>Eight side-by-side mat lanes. Race your whole crew head-to-head down a 400ft straightaway — bragging rights included.</p>
+        <span class="ride-tag" style="background:rgba(255,201,74,0.2); color:#8a6800;">Group Favorite</span>
+      </div>
+
+      <div class="ride-card">
+        <img class="ride-img" src="images/ride7.jpg" alt="Tidal Bowl">
+        <h3>Tidal Bowl</h3>
+        <p>A four-person raft swirls the rim of a 50ft funnel before dropping into the pool. Loud, wet, and better with friends.</p>
+        <span class="ride-tag" style="background:rgba(79,209,224,0.2); color:var(--pool-blue);">Family Ride</span>
+      </div>
+
+      <div class="ride-card">
+        <img class="ride-img" src="images/ride3.jpg" alt="Lazy Lagoon">
+        <h3>Lazy Lagoon</h3>
+        <p>Half a mile of slow-moving river through palm cover and mist fans. Grab a tube and do absolutely nothing for as long as you like.</p>
+        <span class="ride-tag" style="background:rgba(18,122,147,0.15); color:var(--pool-blue);">All Ages</span>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section id="tickets" class="pricing-section">
+    <div class="section-head">
+      <span class="eyebrow-dark">Tickets</span>
+      <h2>Every pass is a real ticket stub.</h2>
+      <p>No surprise fees at the gate. Pick a pass, tear it off, and go get wet.</p>
+    </div>
+
+    <div class="tickets-row">
+      <div class="stub">
+        <div class="stub-top">
+          <div>
+            <div class="stub-park">WAVEWORLD · ADM</div>
+            <div class="stub-name">Day Pass</div>
+          </div>
+          <div class="stub-price">$42</div>
+        </div>
+        <ul>
+          <li>Full park access, open to close</li>
+          <li>All slides & wave pools</li>
+          <li>One tube rental included</li>
+        </ul>
+        <a href="#" class="stub-cta">Get Day Pass</a>
+        <div class="stub-barcode"></div>
+      </div>
+
+      <div class="stub">
+        <span class="best-value">BEST VALUE</span>
+        <div class="stub-top">
+          <div>
+            <div class="stub-park">WAVEWORLD · ADM</div>
+            <div class="stub-name">Season Pass</div>
+          </div>
+          <div class="stub-price">$119</div>
+        </div>
+        <ul>
+          <li>Unlimited visits, all season</li>
+          <li>Skip-the-line lane access</li>
+          <li>15% off food & rentals</li>
+        </ul>
+        <a href="#" class="stub-cta">Get Season Pass</a>
+        <div class="stub-barcode"></div>
+      </div>
+
+      <div class="stub">
+        <div class="stub-top">
+          <div>
+            <div class="stub-park">WAVEWORLD · ADM</div>
+            <div class="stub-name">Family Bundle</div>
+          </div>
+          <div class="stub-price">$149</div>
+        </div>
+        <ul>
+          <li>4 day passes, any single day</li>
+          <li>Shaded cabana, 2hr block</li>
+          <li>Free parking included</li>
+        </ul>
+        <a href="#" class="stub-cta">Get Family Bundle</a>
+        <div class="stub-barcode"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INFO STRIP -->
+  <div class="info-strip" id="info">
+    <div class="info-item">
+      <div class="label">Hours</div>
+      <div class="value">10AM – 7PM Daily</div>
+    </div>
+    <div class="info-item">
+      <div class="label">Location</div>
+      <div class="value">27 Shoreline Avenue</div>
+    </div>
+    <div class="info-item">
+      <div class="label">Water Temp</div>
+      <div class="value">84°F, always</div>
+    </div>
+    <div class="info-item">
+      <div class="label">Parking</div>
+      <div class="value">Free, on-site</div>
+    </div>
+  </div>
+
+  <!-- SPLASH REPORTS -->
+  <section id="reports">
+    <div class="section-head">
+      <span class="eyebrow-dark">Splash Reports</span>
+      <h2>From people who got soaked.</h2>
+    </div>
+    <div class="reports-grid">
+      <div class="postcard">
+        <p class="quote">"Kraken's Plunge should come with a warning label. We rode it four times and screamed every single one."</p>
+        <div class="who">— MARCUS T., SEASON PASS</div>
+      </div>
+      <div class="postcard">
+        <p class="quote">"Lazy Lagoon is the only vacation I've ever needed. Brought a book, never opened it, perfect."</p>
+        <div class="who">— DEEPA R., DAY PASS</div>
+      </div>
+      <div class="postcard">
+        <p class="quote">"Took the whole family on the Family Bundle. Cabana shade was the real MVP by 2pm."</p>
+        <div class="who">— THE OKAFORS, FAMILY BUNDLE</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="footer-logo">Wave<span>World</span></div>
+      <div class="footer-links">
+        <div class="footer-col">
+          <h4>Park</h4>
+          <a href="#attractions">Attractions</a>
+          <a href="#tickets">Tickets</a>
+          <a href="#info">Hours & Location</a>
+          <a href="map.html">Park Map</a>
+        </div>
+        <div class="footer-col">
+          <h4>Plan</h4>
+          <a href="#">Group Bookings</a>
+          <a href="#">Birthday Parties</a>
+          <a href="#">Cabana Rentals</a>
+        </div>
+        <div class="footer-col">
+          <h4>Support</h4>
+          <a href="#">Safety Guidelines</a>
+          <a href="#">Lost & Found</a>
+          <a href="#">Contact Us</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 WaveWorld Water Park. All rights reserved.</span>
+      <span>1 Shoreline Way · Open daily, rain or shine.</span>
+    </div>
+  </footer>
+
+</body>
+</html>

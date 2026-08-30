@@ -35,6 +35,14 @@ a{color:inherit;text-decoration:none;}
 .logo{
   font-size:26px; font-weight:800; color:var(--foam);
   letter-spacing:0.5px;
+  cursor:pointer;
+  display:inline-block;
+  text-decoration:none;
+  transition:opacity 0.2s ease, transform 0.2s ease;
+}
+.logo:hover{
+  opacity:0.9;
+  transform:scale(1.02);
 }
 .logo span{color:var(--sun-gold);}
 .nav-links{display:flex; gap:32px; font-weight:500; font-size:15px;}

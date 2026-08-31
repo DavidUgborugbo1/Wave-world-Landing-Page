@@ -3,29 +3,42 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Park Map — WaveWorld Water Park</title>
+<title>Park Map & Guide — WaveWorld Water Park</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Work+Sans:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-  <!-- NAV -->
+  <!-- NAVIGATION -->
   <nav class="nav">
     <a href="index.html" class="logo">Wave<span>World</span></a>
+    
     <div class="nav-links">
       <a href="index.html#attractions">Attractions</a>
       <a href="index.html#tickets">Tickets</a>
       <a href="index.html#info">Plan Your Day</a>
       <a href="index.html#reports">Splash Reports</a>
-      <a href="map.html" class="active-nav">Park Map</a>
+      <a href="map.html" class="nav-map-link active-nav">🗺️ Park Map</a>
     </div>
-    <a href="index.html#tickets" class="nav-cta">Get Tickets</a>
+
+    <div class="nav-actions">
+      <a href="index.html" class="nav-quick-map" title="Return to Homepage">🏠 <span>Home</span></a>
+      <a href="index.html#tickets" class="nav-cta">Get Tickets</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+    </div>
   </nav>
 
   <!-- MAP HERO HEADER -->
   <header class="map-header">
     <div class="map-header-content">
+      <div class="map-breadcrumb">
+        <a href="index.html">← Back to Overview</a>
+      </div>
       <span class="eyebrow">40 ACRES OF ADVENTURE</span>
       <h1>Park <em>Map</em> & Guide</h1>
       <p>Navigate every splash, slide, and wave. Find your favorite attractions, dining spots, cabana villages, and lockers with ease.</p>
@@ -40,14 +53,17 @@
         <span class="map-note">High Resolution (Updated 2026)</span>
       </div>
       <div class="map-toolbar-buttons">
-        <a href="images/Park map.jpg" target="_blank" class="btn-secondary">⤢ Open Full View</a>
-        <a href="images/Park map.jpg" download="WaveWorld-Park-Map.jpg" class="btn-secondary">⬇ Download Map</a>
+        <a href="images/park map.jpg" target="_blank" class="btn-secondary">⤢ Open Full View</a>
+        <a href="images/park map.jpg" download="WaveWorld-Park-Map.jpg" class="btn-secondary">⬇ Download Map</a>
       </div>
     </div>
 
     <!-- MAP DISPLAY WRAPPER -->
     <div class="map-wrapper">
-      <img src="images/Park map.jpg" alt="WaveWorld Water Park Map" class="map-img">
+      <div class="map-mobile-hint">
+        <span>💡 Tap full view to zoom into specific slide & pool zones</span>
+      </div>
+      <img src="images/park map.jpg" alt="WaveWorld Water Park Map" class="map-img">
     </div>
 
     <!-- MAP QUICK GUIDE & HIGHLIGHTS -->
@@ -86,9 +102,9 @@
         <div class="footer-col">
           <h4>Park</h4>
           <a href="index.html#attractions">Attractions</a>
+          <a href="map.html">Park Map</a>
           <a href="index.html#tickets">Tickets</a>
           <a href="index.html#info">Hours & Location</a>
-          <a href="map.html">Park Map</a>
         </div>
         <div class="footer-col">
           <h4>Plan</h4>
@@ -110,5 +126,7 @@
     </div>
   </footer>
 
+  <!-- EXTERNAL SCRIPTS -->
+  <script src="mobile_nav.js" defer></script>
 </body>
 </html>

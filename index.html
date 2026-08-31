@@ -10,16 +10,27 @@
 </head>
 <body>
 
+  <!-- NAVIGATION -->
   <nav class="nav">
     <a href="index.html" class="logo">Wave<span>World</span></a>
+    
     <div class="nav-links">
       <a href="#attractions">Attractions</a>
       <a href="#tickets">Tickets</a>
       <a href="#info">Plan Your Day</a>
       <a href="#reports">Splash Reports</a>
-      <a href="map.html">Park Map</a>
+      <a href="map.html" class="nav-map-link">🗺️ Map Guide</a>
     </div>
-    <a href="#tickets" class="nav-cta">Get Tickets</a>
+
+    <div class="nav-actions">
+      <a href="map.html" class="nav-quick-map" title="View Park Map">🗺️ <span>Park Map</span></a>
+      <a href="#tickets" class="nav-cta">Get Tickets</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+    </div>
   </nav>
 
   <!-- HERO -->
@@ -29,10 +40,17 @@
       <span class="eyebrow">OPEN DAILY · 10AM – 7PM</span>
       <h1><span class="hero-line hero-line-1">Chase the</span><span class="hero-line hero-line-2"><em>Current</em>.</span></h1>
       <p>Six wave pools, four record-length slides, and one lazy river that never asks you to hurry. WaveWorld is 40 acres of everything the sun invented water for.</p>
-      <a href="#tickets" class="ticket-btn">
-        🎟 Get Your Wristband
-        <span class="stub-code">ADM · SINGLE DAY</span>
-      </a>
+      
+      <div class="hero-cta-group">
+        <a href="#tickets" class="ticket-btn">
+          🎟 Get Your Wristband
+          <span class="stub-code">ADM · SINGLE DAY</span>
+        </a>
+        <a href="map.html" class="hero-map-btn">
+          <span class="hero-map-icon">🗺️</span>
+          <span>View Park Map</span>
+        </a>
+      </div>
     </div>
 
     <div class="wave-wrap">
@@ -84,6 +102,60 @@
         <span class="ride-tag" style="background:rgba(18,122,147,0.15); color:var(--pool-blue);">All Ages</span>
       </div>
 
+    </div>
+  </section>
+
+  <!-- HOMEPAGE PARK MAP PREVIEW -->
+  <section id="park-map" class="map-teaser-section">
+    <div class="section-head">
+      <span class="eyebrow-dark">Park Navigation</span>
+      <h2>40 Acres of Adventure at a Glance.</h2>
+      <p>Locate all 6 wave pools, 4 record slides, cabana rentals, dining pavilions, and lockers before you arrive.</p>
+    </div>
+
+    <div class="map-teaser-card">
+      <a href="map.html" class="map-teaser-preview" aria-label="Open Interactive Park Map">
+        <img src="images/park map.jpg" alt="WaveWorld Park Map Overview" class="map-teaser-img">
+        <div class="map-teaser-overlay">
+          <span class="map-teaser-badge">🗺️ Interactive Park Map</span>
+          <div class="map-teaser-tap-badge">Tap to explore full map →</div>
+        </div>
+      </a>
+
+      <div class="map-teaser-details">
+        <div class="map-teaser-points">
+          <div class="point-item">
+            <span class="point-icon">🌀</span>
+            <div>
+              <strong>North Ridge Slides</strong>
+              <p>Kraken's Plunge & Riptide 8-Lane Racers</p>
+            </div>
+          </div>
+          <div class="point-item">
+            <span class="point-icon">🌊</span>
+            <div>
+              <strong>Swell Lagoon & Surf</strong>
+              <p>6 signature wave pools with zero-depth entries</p>
+            </div>
+          </div>
+          <div class="point-item">
+            <span class="point-icon">🍹</span>
+            <div>
+              <strong>Boardwalk & Cabanas</strong>
+              <p>Private shaded loungers, dining & secure lockers</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="map-teaser-cta-wrap">
+          <a href="map.html" class="map-action-btn">
+            🗺️ Open Interactive Park Map
+          </a>
+          <a href="images/park map.jpg" download="WaveWorld-Park-Map.jpg" class="map-download-pill">
+            ⬇ Download Map
+          </a>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -200,9 +272,9 @@
         <div class="footer-col">
           <h4>Park</h4>
           <a href="#attractions">Attractions</a>
-          <a href="#tickets">Tickets</a>
+          <a href="map.html">Park Map & Guide</a>
+          <a href="#tickets">Tickets & Passes</a>
           <a href="#info">Hours & Location</a>
-          <a href="map.html">Park Map</a>
         </div>
         <div class="footer-col">
           <h4>Plan</h4>
@@ -224,5 +296,7 @@
     </div>
   </footer>
 
+  <!-- EXTERNAL SCRIPTS -->
+  <script src="mobile_nav.js" defer></script>
 </body>
 </html>

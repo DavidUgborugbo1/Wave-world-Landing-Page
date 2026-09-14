@@ -5,7 +5,7 @@
   const panel = document.getElementById("mobileNav");
   const backdrop = document.getElementById("mobileNavBackdrop");
 
-  if (!toggle || !panel) return; // page hasn't got a mobile nav
+  if (!toggle || !panel) return; 
 
   function openNav() {
     panel.classList.add("open");
@@ -34,8 +34,15 @@
     if (e.key === "Escape" && panel.classList.contains("open")) closeNav();
   });
 
-  // Close when a mobile nav link is tapped
+  // Close when a mobile nav link is tapped (smooth UX)
   panel.querySelectorAll("a").forEach(function (link) {
     link.addEventListener("click", closeNav);
+  });
+
+  // Auto-close on screen resize above mobile breakpoint
+  window.addEventListener("resize", function () {
+    if (window.innerWidth > 900 && panel.classList.contains("open")) {
+      closeNav();
+    }
   });
 })();

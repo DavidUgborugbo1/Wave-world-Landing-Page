@@ -1,9 +1,3 @@
-/* ============================================================
-   WaveWorld — Shared Mobile Navigation
-   Handles the hamburger toggle, side-panel, backdrop, and
-   keyboard / accessibility support on every page.
-   ============================================================ */
-
 (function () {
   "use strict";
 
@@ -40,7 +34,7 @@
     if (e.key === "Escape" && panel.classList.contains("open")) closeNav();
   });
 
-  // Close when a mobile nav link is tapped (smooth UX)
+  // Close when a mobile nav link is tapped
   panel.querySelectorAll("a").forEach(function (link) {
     link.addEventListener("click", closeNav);
   });

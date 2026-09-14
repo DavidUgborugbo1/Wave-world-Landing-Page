@@ -35,7 +35,7 @@ button{font-family:inherit;cursor:pointer;}
 
 /* ---------- NAV ---------- */
 .nav{
-  position:fixed; top:0; left:0; right:0; z-index:1000;
+  position:fixed; top:0; left:0; right:0; z-index:1020;
   display:flex; align-items:center; justify-content:space-between;
   padding:16px 6vw;
   background:linear-gradient(180deg, rgba(11,93,107,0.96) 0%, rgba(11,93,107,0.85) 75%, rgba(11,93,107,0) 100%);
@@ -555,7 +555,7 @@ section{padding:90px 8vw;}
 .info-item .label{font-family:'Space Mono',monospace; font-size:11.5px; font-weight:700; color:var(--lagoon-deep); text-transform:uppercase; letter-spacing:1px;}
 .info-item .value{font-size:19px; font-weight:600; color:var(--ink); margin-top:4px;}
 
-/* ---------- SPLASH REPORTS  ---------- */
+/* ---------- SPLASH REPORTS (testimonials) ---------- */
 .reports-grid{
   display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
   gap:24px;
@@ -1344,7 +1344,10 @@ input, select{ font-family:'Work Sans', sans-serif; }
 .mobile-nav-backdrop{
   display:none;
   position:fixed; inset:0;
-  z-index:1000;
+  z-index:1005;
+  background:rgba(4,25,35,0.5);
+  backdrop-filter:blur(3px);
+  -webkit-backdrop-filter:blur(3px);
 }
 .mobile-nav-backdrop.open{ display:block; }
 

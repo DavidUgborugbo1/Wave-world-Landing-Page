@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us — WaveWorld Water Park</title>
+  <meta name="description" content="Get in touch with the WaveWorld team. Questions about tickets, group bookings, lost and found, or anything else — we are here to help.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Work+Sans:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="contact.css">
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <nav class="nav">
+    <a href="index.html" class="logo">Wave<span>World</span></a>
+    <div class="nav-links">
+      <a href="index.html#attractions">Attractions</a>
+      <a href="index.html#tickets">Tickets</a>
+      <a href="index.html#info">Plan Your Day</a>
+      <a href="index.html#reports">Splash Reports</a>
+      <a href="map.html" class="nav-map-link">Map Guide</a>
+    </div>
+    <div class="nav-actions">
+      <a href="tickets.html" class="nav-cta">Get Tickets</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- MOBILE DROPDOWN MENU -->
+  <div class="mobile-nav" id="mobileNav">
+    <div class="mobile-nav-inner">
+      <a href="map.html" class="mobile-map-featured">
+        <span class="mobile-map-icon">🗺️</span>
+        <div class="mobile-map-text">
+          <strong>Interactive Park Map</strong>
+          <small>Explore 40 acres of rides, pools &amp; cabanas</small>
+        </div>
+        <span class="mobile-map-arrow">→</span>
+      </a>
+      <a href="index.html#attractions" class="mobile-nav-link">🌊 Attractions &amp; Rides</a>
+      <a href="tickets.html" class="mobile-nav-link">🎫 All Tickets &amp; Passes</a>
+      <a href="index.html#info" class="mobile-nav-link">🕒 Hours &amp; Visitor Info</a>
+      <a href="index.html#reports" class="mobile-nav-link">💬 Splash Reports</a>
+      <a href="contact.html" class="mobile-nav-link active-nav">✉️ Contact Us</a>
+    </div>
+  </div>
+
+  <!-- CONTACT HERO -->
+  <header class="contact-hero">
+    <div class="contact-hero-content">
+      <span class="eyebrow">REACH OUT ANYTIME</span>
+      <h2>Questions? <em>Contact Us</em>.</h2>
+      <p>Whether you have questions about tickets, group bookings, lost &amp; found. Don't worry — the WaveWorld crew is ready to help.</p>
+    </div>
+    <div class="wave-wrap">
+      <svg viewBox="0 0 1440 180" preserveAspectRatio="none">
+        <path class="wave-anim-1" fill="#F5FBFC" d="M0,90 C 220,30 460,150 720,90 C 980,30 1220,150 1440,90 L1440,180 L0,180 Z
+          M1440,90 C 1660,30 1900,150 2160,90 C 2420,30 2660,150 2880,90 L2880,180 L1440,180 Z"/>
+      </svg>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main class="contact-main">
+
+    <!-- INFO CARDS -->
+    <div class="contact-info-strip">
+      <div class="contact-info-card" id="infoCardPhone">
+        <div class="cic-icon">📞</div>
+        <div class="cic-body">
+          <h3>Phone</h3>
+          <p>+1 (800) 928-3922</p>
+          <span class="cic-note">Mon-Fri, 9 AM to 6 PM</span>
+        </div>
+      </div>
+      <div class="contact-info-card" id="infoCardEmail">
+        <div class="cic-icon">📩</div>
+        <div class="cic-body">
+          <h3>Email</h3>
+          <p>Waveworld@gmail.com</p>
+          <span class="cic-note">We reply within 24 hours</span>
+        </div>
+      </div>
+      <div class="contact-info-card" id="infoCardLocation">
+        <div class="cic-icon">📍</div>
+        <div class="cic-body">
+          <h3>Park Address</h3>
+          <p>27 Shoreline Avenue</p>
+          <span class="cic-note">Open daily, 10 AM to 7 PM</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- FORM + SIDE PANEL -->
+    <div class="contact-layout">
+
+      <!-- FORM CARD -->
+      <div class="contact-form-card">
+        <div class="cfc-header">
+          <h2>Send us a message</h2>
+          <p>Fill in the form below and we will get back to you as soon as possible.</p>
+        </div>
+
+        <form class="contact-form" id="contactForm" novalidate>
+
+          <div class="cf-field" id="fieldFullName">
+            <label for="fullName">Full Name <span class="cf-required" aria-hidden="true">*</span></label>
+            <div class="cf-input-wrap">
+              <input type="text" id="fullName" name="fullName" placeholder="Jane Doe" autocomplete="name" required>
+            </div>
+            <span class="cf-error-msg" id="errFullName" role="alert" aria-live="polite"></span>
+          </div>
+
+          <div class="cf-field" id="fieldEmail">
+            <label for="contactEmail">Email Address <span class="cf-required" aria-hidden="true">*</span></label>
+            <div class="cf-input-wrap">
+              <input type="email" id="contactEmail" name="email" placeholder="you@example.com" autocomplete="email" required>
+            </div>
+            <span class="cf-error-msg" id="errEmail" role="alert" aria-live="polite"></span>
+          </div>
+
+          <div class="cf-field" id="fieldPhone">
+            <label for="mobileNumber">Mobile Number <span class="cf-required" aria-hidden="true">*</span></label>
+            <div class="cf-input-wrap">
+              <input type="tel" id="mobileNumber" name="mobile" placeholder="+1 555 000 0000" autocomplete="tel" inputmode="tel" required>
+            </div>
+            <span class="cf-error-msg" id="errPhone" role="alert" aria-live="polite"></span>
+          </div>
+
+          <div class="cf-field" id="fieldMessage">
+            <label for="message">Your Message <span class="cf-required" aria-hidden="true">*</span></label>
+            <textarea id="message" name="message" placeholder="Tell us what is on your mind..." rows="5" maxlength="1000" required></textarea>
+            <div class="cf-char-count"><span id="charCount">0</span> / 1000</div>
+            <span class="cf-error-msg" id="errMessage" role="alert" aria-live="polite"></span>
+          </div>
+
+          <button type="submit" class="cf-submit-btn" id="contactSubmitBtn">
+            <span class="cf-btn-text">Send Message</span>
+            <span class="cf-btn-spinner" aria-hidden="true"></span>
+          </button>
+
+        </form>
+      </div>
+
+      <!-- SIDE PANEL -->
+      <aside class="contact-side">
+
+        <div class="contact-side-block" id="sideBlockFAQ">
+          <h3>Quick Answers</h3>
+          <ul class="contact-faq">
+            <li>
+              <button class="faq-toggle" aria-expanded="false" id="faq1Btn" aria-controls="faq1Body">
+                Can I change my visit date after booking?
+                <span class="faq-chevron" aria-hidden="true">&rsaquo;</span>
+              </button>
+              <div class="faq-body" id="faq1Body" hidden>
+                Yes! Date changes are free up to 48 hours before your visit. Contact us with your booking reference.
+              </div>
+            </li>
+            <li>
+              <button class="faq-toggle" aria-expanded="false" id="faq2Btn" aria-controls="faq2Body">
+                Are tickets refundable?
+                <span class="faq-chevron" aria-hidden="true">&rsaquo;</span>
+              </button>
+              <div class="faq-body" id="faq2Body" hidden>
+                Wristbands are non-refundable but fully transferable up to 24 hours before your visit.
+              </div>
+            </li>
+            <li>
+              <button class="faq-toggle" aria-expanded="false" id="faq3Btn" aria-controls="faq3Body">
+                Do you cater for large groups?
+                <span class="faq-chevron" aria-hidden="true">&rsaquo;</span>
+              </button>
+              <div class="faq-body" id="faq3Body" hidden>
+                Absolutely. Groups of 15 or more get dedicated coordinators and special pricing. Select Group and Corporate Bookings in the form.
+              </div>
+            </li>
+            <li>
+              <button class="faq-toggle" aria-expanded="false" id="faq4Btn" aria-controls="faq4Body">
+                What is the lost and found process?
+                <span class="faq-chevron" aria-hidden="true">&rsaquo;</span>
+              </button>
+              <div class="faq-body" id="faq4Body" hidden>
+                Items are held at the Guest Services hut near the main entrance for 30 days. Send us a message with a description and your visit date.
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <div class="contact-side-block contact-social-block" id="sideBlockSocial">
+          <h3>Find us online</h3>
+          <div class="contact-social-links">
+            <a href="#" class="social-pill" id="socialInstagram" aria-label="WaveWorld on Instagram">Instagram</a>
+            <a href="#" class="social-pill" id="socialTikTok" aria-label="WaveWorld on TikTok">TikTok</a>
+            <a href="#" class="social-pill" id="socialTwitter" aria-label="WaveWorld on X/Twitter">X / Twitter</a>
+            <a href="#" class="social-pill" id="socialFacebook" aria-label="WaveWorld on Facebook">Facebook</a>
+          </div>
+        </div>
+
+      </aside>
+    </div>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-top">
+      <a href="index.html" class="footer-logo">Wave<span>World</span></a>
+      <div class="footer-links">
+        <div class="footer-col">
+          <h4>Park</h4>
+          <a href="index.html#attractions">Attractions</a>
+          <a href="map.html">Park Map &amp; Guide</a>
+          <a href="index.html#tickets">Tickets &amp; Passes</a>
+          <a href="index.html#info">Hours &amp; Location</a>
+        </div>
+        <div class="footer-col">
+          <h4>Plan</h4>
+          <a href="#">Group Bookings</a>
+          <a href="#">Birthday Parties</a>
+          <a href="#">Cabana Rentals</a>
+        </div>
+        <div class="footer-col">
+          <h4>Support</h4>
+          <a href="#">Safety Guidelines</a>
+          <a href="#">Lost &amp; Found</a>
+          <a href="contact.html">Contact Us</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 WaveWorld Water Park. All rights reserved.</span>
+      <span>27 Shoreline Avenue &middot; Open daily, rain or shine.</span>
+    </div>
+  </footer>
+
+  <!-- MOBILE NAV BACKDROP -->
+  <div class="mobile-nav-backdrop" id="mobileNavBackdrop"></div>
+
+  <!-- SUCCESS TOAST -->
+  <div class="contact-toast" id="contactToast" role="status" aria-live="polite" aria-atomic="true">
+    <div class="toast-body">
+      <strong>Message sent!</strong>
+      <span>We will be in touch within 24 hours.</span>
+    </div>
+    <button class="toast-close" id="toastClose" aria-label="Dismiss notification">&times;</button>
+  </div>
+
+  <script src="mobile_nav.js" defer></script>
+  <script src="contact.js" defer></script>
+</body>
+</html>

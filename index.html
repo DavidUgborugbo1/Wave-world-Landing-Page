@@ -23,14 +23,33 @@
     </div>
 
     <div class="nav-actions">
-      <a href="#tickets" class="nav-cta">Get Tickets</a>
+      <a href="tickets.html" class="nav-cta">Get Tickets</a>
       <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false">
         <span class="bar"></span>
         <span class="bar"></span>
         <span class="bar"></span>
       </button>
     </div>
+
   </nav>
+
+  <!-- MOBILE DROPDOWN MENU -->
+  <div class="mobile-nav" id="mobileNav">
+    <div class="mobile-nav-inner">
+      <a href="map.html" class="mobile-map-featured">
+        <span class="mobile-map-icon">🗺️</span>
+        <div class="mobile-map-text">
+          <strong>Interactive Park Map</strong>
+          <small>Explore 40 acres of rides, pools &amp; cabanas</small>
+        </div>
+        <span class="mobile-map-arrow">→</span>
+      </a>
+      <a href="#attractions" class="mobile-nav-link">🌊 Attractions &amp; Rides</a>
+      <a href="tickets.html" class="mobile-nav-link">🎫 All Tickets &amp; Passes</a>
+      <a href="#info" class="mobile-nav-link">🕒 Hours &amp; Visitor Info</a>
+      <a href="#reports" class="mobile-nav-link">💬 Splash Reports</a>
+    </div>
+  </div>
 
   <!-- HERO -->
   <header class="hero">
@@ -114,7 +133,7 @@
 
     <div class="map-teaser-card">
       <a href="map.html" class="map-teaser-preview" aria-label="Open Interactive Park Map">
-        <img src="images/Park map.jpg" alt="WaveWorld Park Map Overview" class="map-teaser-img">
+        <img src="images/park map.jpg" alt="WaveWorld Park Map Overview" class="map-teaser-img">
         <div class="map-teaser-overlay">
           <span class="map-teaser-badge">🗺️ Interactive Park Map</span>
           <div class="map-teaser-tap-badge">Tap to explore full map →</div>
@@ -150,7 +169,7 @@
           <a href="map.html" class="map-action-btn">
             🗺️ Open Interactive Park Map
           </a>
-          <a href="images/Park map.jpg" download="WaveWorld-Park-Map.jpg" class="map-download-pill">
+          <a href="images/park map.jpg" download="WaveWorld-Park-Map.jpg" class="map-download-pill">
             ⬇ Download Map
           </a>
         </div>
@@ -180,7 +199,7 @@
           <li>All slides & wave pools</li>
           <li>One tube rental included</li>
         </ul>
-        <a href="#" class="stub-cta">Get Day Pass</a>
+        <a href="tickets.html" class="stub-cta">Get Day Pass</a>
         <div class="stub-barcode"></div>
       </div>
 
@@ -198,7 +217,7 @@
           <li>Skip-the-line lane access</li>
           <li>15% off food & rentals</li>
         </ul>
-        <a href="#" class="stub-cta">Get Season Pass</a>
+        <a href="tickets.html" class="stub-cta">Get Season Pass</a>
         <div class="stub-barcode"></div>
       </div>
 
@@ -215,7 +234,7 @@
           <li>Shaded cabana, 2hr block</li>
           <li>Free parking included</li>
         </ul>
-        <a href="#" class="stub-cta">Get Family Bundle</a>
+        <a href="tickets.html" class="stub-cta">Get Family Bundle</a>
         <div class="stub-barcode"></div>
       </div>
     </div>
@@ -263,6 +282,9 @@
     </div>
   </section>
 
+  <!-- MOBILE NAV BACKDROP -->
+  <div class="mobile-nav-backdrop" id="mobileNavBackdrop"></div>
+
   <!-- FOOTER -->
   <footer class="footer">
     <div class="footer-top">
@@ -294,6 +316,7 @@
       <span>27 Shoreline Avenue · Open daily, rain or shine.</span>
     </div>
   </footer>
-  
+
+  <script src="mobile_nav.js" defer></script>
 </body>
 </html>

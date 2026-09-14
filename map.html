@@ -16,7 +16,6 @@
     
     <div class="nav-links">
       <a href="index.html#attractions">Attractions</a>
-      <a href="index.html#tickets">Tickets</a>
       <a href="index.html#info">Plan Your Day</a>
       <a href="index.html#reports">Splash Reports</a>
       <a href="map.html" class="nav-map-link active-nav">🗺️ Park Map</a>
@@ -24,14 +23,33 @@
 
     <div class="nav-actions">
       <a href="index.html" class="nav-quick-map" title="Return to Homepage">🏠 <span>Home</span></a>
-      <a href="index.html#tickets" class="nav-cta">Get Tickets</a>
+      <a href="tickets.html" class="nav-cta">Get Tickets</a>
       <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false">
         <span class="bar"></span>
         <span class="bar"></span>
         <span class="bar"></span>
       </button>
     </div>
+
   </nav>
+
+  <!-- MOBILE DROPDOWN MENU -->
+  <div class="mobile-nav" id="mobileNav">
+    <div class="mobile-nav-inner">
+      <a href="index.html" class="mobile-map-featured">
+        <span class="mobile-map-icon">🏠</span>
+        <div class="mobile-map-text">
+          <strong>Back to WaveWorld Home</strong>
+          <small>Attractions, tickets &amp; park info</small>
+        </div>
+        <span class="mobile-map-arrow">→</span>
+      </a>
+      <a href="index.html#attractions" class="mobile-nav-link">🌊 Attractions &amp; Rides</a>
+      <a href="tickets.html" class="mobile-nav-link">🎫 All Tickets &amp; Passes</a>
+      <a href="index.html#info" class="mobile-nav-link">🕒 Hours &amp; Visitor Info</a>
+      <a href="index.html#reports" class="mobile-nav-link">💬 Splash Reports</a>
+    </div>
+  </div>
 
   <!-- MAP HERO HEADER -->
   <header class="map-header">
@@ -53,14 +71,14 @@
         <span class="map-note">High Resolution (Updated 2026)</span>
       </div>
       <div class="map-toolbar-buttons">
-        <a href="images/Park map.jpg" target="_blank" class="btn-secondary">⤢ Open Full View</a>
-        <a href="images/Park map.jpg" download="WaveWorld-Park-Map.jpg" class="btn-secondary">⬇ Download Map</a>
+        <a href="images/park map.jpg" id="openFullViewBtn" class="btn-secondary">⤢ Open Full View</a>
+        <a href="images/park map.jpg" download="WaveWorld-Park-Map.jpg" class="btn-secondary">⬇ Download Map</a>
       </div>
     </div>
 
     <!-- MAP DISPLAY WRAPPER -->
     <div class="map-wrapper">
-      <img src="images/Park map.jpg" alt="WaveWorld Water Park Map" class="map-img">
+      <img src="images/park map.jpg" alt="WaveWorld Water Park Map" class="map-img" id="mapPreviewImg">
     </div>
 
     <!-- MAP QUICK GUIDE & HIGHLIGHTS -->
@@ -90,6 +108,9 @@
       </div>
     </div>
   </section>
+
+  <!-- MOBILE NAV BACKDROP -->
+  <div class="mobile-nav-backdrop" id="mobileNavBackdrop"></div>
 
   <!-- FOOTER -->
   <footer class="footer">
@@ -123,6 +144,16 @@
     </div>
   </footer>
 
+  <!-- IN-PAGE MAP IMAGE MODAL (replaces target="_blank" new tab) -->
+  <div id="mapImageModal" class="map-modal" aria-hidden="true" role="dialog" aria-label="Full park map">
+    <div class="map-modal-backdrop" id="mapModalBackdrop"></div>
+    <div class="map-image-modal-content">
+      <button type="button" id="mapModalClose" class="map-modal-close" aria-label="Close map view">✕</button>
+      <img src="images/park map.jpg" alt="WaveWorld Full Park Map" class="map-modal-img">
+    </div>
+  </div>
 
+  <script src="mobile_nav.js" defer></script>
+  <script src="map.js" defer></script>
 </body>
-</html>
+</html> 

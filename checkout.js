@@ -1,8 +1,5 @@
 // WaveWorld Checkout Interactions: Ticket Selection, Quantity & Payment Methods
 document.addEventListener("DOMContentLoaded", () => {
-  // --- 0. TICKET LOOKUP (driven by ?pass= in the URL) ---
-  // Every ticket button on tickets.html links here as checkout.html?pass=<id>
-  // so this single page can represent any of the six passes.
   const PASSES = {
     day: {
       park: "WAVEWORLD · ADM",

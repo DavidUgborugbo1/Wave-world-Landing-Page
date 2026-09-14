@@ -740,3 +740,1036 @@ section{padding:90px 8vw;}
   color:#4a7680;
   line-height:1.5;
 }
+
+/* ================================================================
+   WaveWorld — checkout.html STYLES
+   Load AFTER base.css.
+   ================================================================ */
+
+/* ---------- CHECKOUT PAGE ---------- */
+input, select{ font-family:'Work Sans', sans-serif; }
+
+.topbar{
+  display:flex; align-items:center; justify-content:space-between;
+  padding:20px 6vw;
+  background:var(--lagoon-deep);
+}
+.topbar .logo{ font-size:22px; font-weight:800; color:var(--foam); }
+.topbar .logo span{ color:var(--sun-gold); }
+.back-link{
+  color:rgba(245,251,252,0.85); font-size:14px; font-weight:600;
+  display:flex; align-items:center; gap:6px;
+  transition:color 0.2s ease;
+}
+.back-link:hover{ color:var(--foam); }
+
+.checkout-wrap{
+  max-width:1080px; margin:0 auto;
+  padding:60px 6vw 100px;
+  display:grid; grid-template-columns:1fr 1.15fr; gap:48px;
+  align-items:start;
+}
+
+.page-title{
+  font-size:clamp(26px,3vw,34px); color:var(--lagoon-deep); margin-bottom:6px;
+}
+.page-sub{ font-size:14.5px; color:#4a7680; margin-bottom:30px; }
+
+/* Checkout Order Summary Stub */
+.summary-stub{
+  position:relative;
+  background:var(--foam);
+  border-radius:16px;
+  padding:32px 28px 28px;
+  box-shadow:0 16px 40px rgba(11,93,107,0.14);
+  border:2px solid rgba(18,122,147,0.12);
+}
+.summary-stub::before, .summary-stub::after{
+  content:""; position:absolute; width:26px; height:26px;
+  background:var(--foam); border:2px solid rgba(18,122,147,0.12);
+  border-radius:50%; top:158px;
+}
+.summary-stub::before{ left:-14px; border-right:none; }
+.summary-stub::after{ right:-14px; border-left:none; }
+
+.stub-price-row{
+  display:flex; justify-content:space-between; align-items:baseline;
+  margin-top:10px; padding-bottom:22px; border-bottom:2px dashed rgba(8,51,61,0.2);
+}
+.stub-per{ font-size:13px; color:#4a7680; }
+
+.qty-row{
+  display:flex; align-items:center; justify-content:space-between;
+  padding:20px 0; border-bottom:1px solid rgba(18,122,147,0.12);
+}
+.qty-label{ font-size:14.5px; font-weight:600; }
+.qty-control{ display:flex; align-items:center; gap:14px; }
+.qty-btn{
+  width:30px; height:30px; border-radius:50%; border:2px solid var(--pool-blue);
+  background:var(--foam); color:var(--pool-blue); font-size:16px; font-weight:700;
+  cursor:pointer; display:flex; align-items:center; justify-content:center;
+  transition:all 0.2s ease;
+}
+.qty-btn:hover{ background:var(--pool-blue); color:var(--foam); }
+.qty-num{ font-family:'Space Mono',monospace; font-size:16px; min-width:18px; text-align:center; }
+
+.date-row{ padding:20px 0; border-bottom:1px solid rgba(18,122,147,0.12); }
+.date-row label{ display:block; font-size:13px; font-weight:600; margin-bottom:8px; color:var(--lagoon-deep); }
+.date-row input{
+  width:100%; padding:11px 14px; border-radius:8px; border:1.5px solid rgba(18,122,147,0.25);
+  font-size:14.5px; color:var(--ink);
+}
+
+.totals{ padding-top:20px; }
+.totals-line{ display:flex; justify-content:space-between; font-size:14.5px; color:#4a7680; margin-bottom:10px; }
+.totals-line.grand{
+  font-size:19px; font-weight:700; color:var(--ink); margin-top:14px;
+  padding-top:14px; border-top:2px dashed rgba(8,51,61,0.2);
+}
+.totals-line.grand span:last-child{ font-family:'Space Mono',monospace; color:var(--coral-pop); }
+
+/* Checkout Payment Form */
+.pay-card{
+  background:var(--foam);
+  border-radius:16px;
+  padding:34px 30px;
+  box-shadow:0 16px 40px rgba(11,93,107,0.14);
+  border:2px solid rgba(18,122,147,0.12);
+}
+.pay-card h3{ font-size:20px; color:var(--lagoon-deep); margin-bottom:18px; }
+
+/* Payment Method Switcher Tabs */
+.payment-method-selector{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px;
+  background:rgba(18,122,147,0.08);
+  padding:6px;
+  border-radius:12px;
+  margin-bottom:24px;
+}
+.method-tab{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  padding:12px 14px;
+  border-radius:9px;
+  border:1.5px solid transparent;
+  background:transparent;
+  color:#4a7680;
+  font-weight:600;
+  font-size:14px;
+  transition:all 0.2s ease;
+}
+.method-tab:hover{
+  color:var(--lagoon-deep);
+  background:rgba(255,255,255,0.6);
+}
+.method-tab.active{
+  background:white;
+  color:var(--lagoon-deep);
+  font-weight:700;
+  border-color:rgba(18,122,147,0.2);
+  box-shadow:0 4px 12px rgba(11,93,107,0.08);
+}
+.method-icon{
+  font-size:17px;
+}
+
+.pay-panel{
+  display:block;
+  animation:panelFade 0.25s ease forwards;
+}
+.pay-panel.hidden{
+  display:none;
+}
+@keyframes panelFade{
+  0%{opacity:0; transform:translateY(4px);}
+  100%{opacity:1; transform:translateY(0);}
+}
+
+/* Bank Transfer Instruction & Card */
+.bank-instruction-box{
+  margin-bottom:22px;
+}
+.bank-instruction-lead{
+  font-size:13.5px;
+  color:#4a7680;
+  line-height:1.5;
+  margin-bottom:14px;
+}
+.bank-account-card{
+  background:white;
+  border:1.5px solid rgba(18,122,147,0.2);
+  border-radius:14px;
+  padding:18px 20px;
+  box-shadow:0 6px 18px rgba(11,93,107,0.06);
+}
+.bank-info-row{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:9px 0;
+  border-bottom:1px solid rgba(18,122,147,0.1);
+  font-size:13.5px;
+}
+.bank-info-row:last-child{
+  border-bottom:none;
+}
+.bank-info-label{
+  color:#4a7680;
+  font-weight:500;
+}
+.bank-info-value{
+  font-weight:700;
+  color:var(--ink);
+}
+.bank-info-row.highlighted{
+  background:rgba(79,209,224,0.08);
+  margin:4px -10px;
+  padding:10px 10px;
+  border-radius:8px;
+  border-bottom:none;
+}
+.mono-num{
+  font-family:'Space Mono', monospace;
+  font-size:15px;
+  color:var(--pool-blue);
+  letter-spacing:0.5px;
+  display:block;
+  margin-top:2px;
+}
+.total-transfer-row{
+  margin-top:6px;
+  padding-top:12px;
+  border-top:1.5px dashed rgba(8,51,61,0.2) !important;
+}
+.bank-info-amount{
+  font-family:'Space Mono', monospace;
+  font-size:22px;
+  font-weight:700;
+  color:var(--coral-pop);
+}
+
+.copy-pill-btn{
+  background:var(--foam);
+  border:1.5px solid rgba(18,122,147,0.25);
+  color:var(--lagoon-deep);
+  font-family:'Space Mono', monospace;
+  font-size:11px;
+  font-weight:700;
+  padding:5px 10px;
+  border-radius:6px;
+  transition:all 0.15s ease;
+  white-space:nowrap;
+}
+.copy-pill-btn:hover{
+  background:var(--pool-blue);
+  color:var(--foam);
+  border-color:var(--pool-blue);
+}
+.copy-pill-btn.copied{
+  background:var(--lagoon-deep);
+  color:var(--sun-gold);
+  border-color:var(--lagoon-deep);
+}
+
+.field{ margin-bottom:18px; }
+.field label{ display:block; font-size:13px; font-weight:600; color:var(--lagoon-deep); margin-bottom:7px; }
+.field input{
+  width:100%; padding:12px 14px; border-radius:8px; border:1.5px solid rgba(18,122,147,0.25);
+  font-size:14.5px; color:var(--ink); background:#fff;
+}
+.field input:focus{ outline:none; border-color:var(--splash-cyan); box-shadow:0 0 0 3px rgba(79,209,224,0.25); }
+.field-row{ display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+.field-row.three{ grid-template-columns:1fr 1fr 1fr; }
+
+.card-brands{ display:flex; gap:8px; margin-top:6px; flex-wrap:wrap; }
+.card-brand{
+  font-family:'Space Mono',monospace; font-size:10px; font-weight:700;
+  padding:4px 9px; border-radius:5px; background:rgba(18,122,147,0.1); color:var(--pool-blue);
+}
+
+.pay-btn{
+  width:100%; margin-top:8px;
+  background:var(--coral-pop); color:var(--foam);
+  font-family:'Baloo 2', sans-serif; font-weight:700; font-size:17.5px;
+  padding:15px; border:none; border-radius:10px; cursor:pointer;
+  display:flex; align-items:center; justify-content:center; gap:8px;
+  transition:background 0.2s, transform 0.2s;
+}
+.pay-btn:hover{ background:#e85a4b; transform:translateY(-2px); }
+.bank-confirm-btn{
+  background:var(--pool-blue);
+}
+.bank-confirm-btn:hover{
+  background:var(--lagoon-deep);
+}
+
+.secure-note{
+  display:flex; align-items:center; justify-content:center; gap:8px;
+  margin-top:14px; font-size:12.5px; color:#4a7680;
+}
+
+.fine-print{ font-size:12px; color:#7a9aa1; margin-top:20px; line-height:1.6; text-align:center; }
+
+/* Success Modal Card */
+.success-modal-card{
+  position:relative;
+  z-index:2;
+  width:100%;
+  max-width:520px;
+  background:white;
+  border-radius:24px;
+  padding:36px 30px;
+  text-align:center;
+  box-shadow:0 30px 80px rgba(0,0,0,0.5);
+  animation:modalScaleIn 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+.success-icon-wrap{
+  font-size:44px;
+  margin-bottom:12px;
+}
+.success-title{
+  font-size:26px;
+  color:var(--lagoon-deep);
+  margin-bottom:12px;
+}
+.success-message{
+  font-size:14.5px;
+  color:#4a7680;
+  line-height:1.6;
+  margin-bottom:26px;
+}
+.success-actions{
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+.modal-home-btn{
+  background:var(--lagoon-deep);
+  text-align:center;
+}
+.modal-home-btn:hover{
+  background:var(--pool-blue);
+}
+.modal-dismiss-btn{
+  background:transparent;
+  border:none;
+  color:#7a9aa1;
+  font-weight:600;
+  font-size:13.5px;
+  padding:8px;
+}
+.modal-dismiss-btn:hover{
+  color:var(--ink);
+}
+
+/* Responsive adjustments for Checkout */
+@media (max-width:860px){
+  .checkout-wrap{ grid-template-columns:1fr; padding:40px 6vw 80px; }
+}
+@media (max-width:540px){
+  .field-row, .field-row.three{ grid-template-columns:1fr; }
+  .pay-card{ padding:24px 18px; }
+  .summary-stub{ padding:24px 18px; }
+  .method-tab{ font-size:12.5px; padding:10px 8px; }
+  .bank-account-card{ padding:14px 12px; }
+}
+
+
+/* ---------- FIELD VALIDATION STATES ---------- */
+.field input.input-error{
+  border-color:var(--coral-pop);
+  background:rgba(255,107,91,0.06);
+}
+.field input.input-error:focus{
+  border-color:var(--coral-pop);
+  box-shadow:0 0 0 3px rgba(255,107,91,0.2);
+}
+.field-error-msg{
+  display:block;
+  color:var(--coral-pop);
+  font-size:12px;
+  font-weight:600;
+  margin-top:6px;
+}
+
+/* ============================================================
+   TICKETS PAGE — consistency fixes & missing components
+   ============================================================ */
+
+/* Tickets page hero variant — slightly distinct from the map header */
+.tickets-header{
+  background:linear-gradient(180deg, var(--lagoon-deep) 0%, var(--pool-blue) 65%, var(--splash-cyan) 130%);
+}
+
+.tickets-page-section{
+  padding-top:90px;
+}
+
+.text-center{
+  text-align:center;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+/* Six-card grid: override the 3-card tilt logic from the homepage.
+   A page whose entire job is comparing options should read as a
+   calm, aligned grid — not the playful, hand-tossed look that works
+   for 3 featured stubs on the homepage. */
+.tickets-page-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(270px, 1fr));
+  gap:28px;
+}
+.tickets-page-grid .stub{
+  transform:none;
+  margin-top:0;
+  display:flex;
+  flex-direction:column;
+}
+.tickets-page-grid .stub:hover{
+  transform:translateY(-6px);
+}
+.tickets-page-grid .stub-cta{
+  margin-top:auto;
+}
+
+/* Featured stub (Season Pass) — same size/shape as the rest, just
+   visually promoted so it doesn't look like a mismatched card */
+.featured-stub{
+  border:2px solid var(--sun-gold);
+  box-shadow:0 24px 55px rgba(255,201,74,0.28);
+}
+.featured-stub .stub-price{
+  color:var(--lagoon-deep);
+}
+.featured-stub .stub-cta{
+  background:var(--sun-gold);
+  color:var(--ink);
+}
+.featured-stub .stub-cta:hover{
+  background:#e8b53d;
+}
+
+/* ---------- COMPARISON TABLE ---------- */
+.comparison-container{
+  margin-top:30px;
+}
+.table-responsive-wrapper{
+  overflow-x:auto;
+  border-radius:16px;
+  box-shadow:0 16px 40px rgba(11,93,107,0.1);
+  border:2px solid rgba(18,122,147,0.12);
+}
+.perks-table{
+  width:100%;
+  border-collapse:collapse;
+  background:var(--foam);
+  min-width:560px;
+}
+.perks-table thead tr{
+  background:var(--lagoon-deep);
+}
+.perks-table th{
+  color:var(--foam);
+  font-family:'Baloo 2', sans-serif;
+  font-weight:700;
+  font-size:15px;
+  text-align:left;
+  padding:16px 18px;
+  white-space:nowrap;
+}
+.perks-table td{
+  padding:14px 18px;
+  font-size:14px;
+  color:#3d6b74;
+  border-bottom:1px solid rgba(18,122,147,0.12);
+}
+.perks-table tbody tr:last-child td{
+  border-bottom:none;
+}
+.perks-table tbody tr:nth-child(even){
+  background:rgba(18,122,147,0.04);
+}
+.perks-table td:first-child{
+  font-weight:600;
+  color:var(--ink);
+}
+.perks-table th.table-highlight{
+  background:var(--sun-gold);
+  color:var(--ink);
+}
+.perks-table td.table-highlight{
+  background:rgba(255,201,74,0.14);
+  font-weight:600;
+  color:var(--ink);
+}
+
+/* ---------- TICKET FAQ ---------- */
+.ticket-faq-section{
+  margin-top:80px;
+}
+.faq-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));
+  gap:22px;
+}
+.faq-card{
+  background:var(--foam);
+  border-radius:16px;
+  padding:24px 22px;
+  border:2px solid rgba(18,122,147,0.12);
+  transition:transform 0.2s ease, border-color 0.2s ease;
+}
+.faq-card:hover{
+  transform:translateY(-3px);
+  border-color:var(--splash-cyan);
+}
+.faq-card h4{
+  font-size:16px;
+  color:var(--lagoon-deep);
+  margin-bottom:8px;
+  font-family:'Baloo 2', sans-serif;
+}
+.faq-card p{
+  font-size:13.5px;
+  color:#4a7680;
+  line-height:1.55;
+}
+
+/* ---------- MOBILE NAV TOGGLE + PANEL ---------- */
+.nav-toggle{
+  display:none;
+  flex-direction:column;
+  justify-content:center;
+  gap:5px;
+  width:36px;
+  height:36px;
+  background:none;
+  border:none;
+  padding:0;
+}
+.nav-toggle .bar{
+  display:block;
+  width:100%;
+  height:2.5px;
+  border-radius:3px;
+  background:var(--foam);
+  transition:transform 0.3s ease, opacity 0.25s ease, width 0.3s ease;
+}
+/* Animate into an X */
+.nav-toggle[aria-expanded="true"] .bar:nth-child(1){ transform:translateY(7.5px) rotate(45deg); }
+.nav-toggle[aria-expanded="true"] .bar:nth-child(2){ opacity:0; width:0; }
+.nav-toggle[aria-expanded="true"] .bar:nth-child(3){ transform:translateY(-7.5px) rotate(-45deg); }
+
+/* ---- Dropdown panel ---- */
+.mobile-nav{
+  position:fixed;
+  top:0; left:0; right:0;
+  z-index:1010;
+  /* starts hidden behind the nav bar */
+  clip-path:inset(0 0 100% 0);
+  opacity:0;
+  pointer-events:none;
+  background:var(--lagoon-deep);
+  padding:calc(64px + 16px) 0 0; /* push content below the nav */
+  transition:
+    clip-path 0.38s cubic-bezier(0.16,1,0.3,1),
+    opacity   0.25s ease;
+  box-shadow:0 16px 40px rgba(4,25,35,0.35);
+}
+.mobile-nav.open{
+  clip-path:inset(0 0 -20px 0);
+  opacity:1;
+  pointer-events:all;
+}
+
+/* Inner content wrapper with padding */
+.mobile-nav-inner{
+  padding:18px 22px 26px;
+  display:flex;
+  flex-direction:column;
+  gap:4px;
+}
+
+/* Featured shortcut card */
+.mobile-map-featured{
+  display:flex; align-items:center; gap:12px;
+  background:rgba(255,255,255,0.08);
+  border:1px solid rgba(255,255,255,0.14);
+  border-radius:12px;
+  padding:13px 15px;
+  margin-bottom:14px;
+  transition:background 0.2s ease;
+}
+.mobile-map-featured:hover{ background:rgba(255,255,255,0.14); }
+.mobile-map-icon{ font-size:22px; flex-shrink:0; }
+.mobile-map-text strong{ color:var(--foam); font-size:14.5px; display:block; line-height:1.2; }
+.mobile-map-text small{ color:rgba(245,251,252,0.6); font-size:11.5px; margin-top:2px; display:block; }
+.mobile-map-arrow{ margin-left:auto; color:var(--sun-gold); font-size:18px; flex-shrink:0; }
+
+/* Nav links */
+.mobile-nav-link{
+  color:rgba(245,251,252,0.9);
+  font-size:15.5px;
+  font-weight:600;
+  padding:13px 6px;
+  border-bottom:1px solid rgba(255,255,255,0.07);
+  display:flex;
+  align-items:center;
+  gap:10px;
+  transition:color 0.18s ease, padding-left 0.18s ease;
+}
+.mobile-nav-link:hover{ color:var(--sun-gold); padding-left:8px; }
+.mobile-nav-link:last-of-type{ border-bottom:none; }
+
+/* CTA button */
+.mobile-nav-cta{
+  margin-top:16px;
+  background:var(--sun-gold);
+  color:var(--ink);
+  text-align:center;
+  padding:13px;
+  border-radius:100px;
+  font-weight:700;
+  font-size:15px;
+  transition:background 0.2s ease, transform 0.2s ease;
+}
+.mobile-nav-cta:hover{ background:#f5c230; transform:translateY(-1px); }
+
+/* Backdrop — just closes the menu on outside tap */
+.mobile-nav-backdrop{
+  display:none;
+  position:fixed; inset:0;
+  z-index:1000;
+}
+.mobile-nav-backdrop.open{ display:block; }
+
+@media (max-width:900px){
+  .nav-links, .nav-quick-map{ display:none; }
+  .nav-toggle{ display:flex; }
+}
+
+/* Responsive tweaks for the tickets page specifically */
+@media (max-width:700px){
+  .tickets-page-grid{ grid-template-columns:1fr; }
+  .perks-table{ min-width:520px; }
+}
+
+/* ============================================================
+   MODAL SYSTEM — base overlay (was missing; also used by the
+   checkout success modal, so this fixes both at once)
+   ============================================================ */
+.map-modal{
+  position:fixed;
+  inset:0;
+  z-index:2000;
+  display:none;
+  align-items:center;
+  justify-content:center;
+  padding:20px;
+}
+.map-modal.is-active{
+  display:flex;
+}
+.map-modal-backdrop{
+  position:absolute;
+  inset:0;
+  background:rgba(4,40,48,0.78);
+  backdrop-filter:blur(2px);
+}
+body.modal-open{
+  overflow:hidden;
+}
+
+/* Map image modal specifics */
+.map-image-modal-content{
+  position:relative;
+  z-index:2;
+  max-width:94vw;
+  max-height:92vh;
+}
+.map-modal-img{
+  display:block;
+  max-width:100%;
+  max-height:90vh;
+  border-radius:14px;
+  box-shadow:0 30px 80px rgba(0,0,0,0.55);
+}
+.map-modal-close{
+  position:absolute;
+  top:-16px; right:-16px;
+  width:38px; height:38px;
+  border-radius:50%;
+  background:var(--foam);
+  color:var(--ink);
+  border:none;
+  font-weight:700;
+  font-size:16px;
+  cursor:pointer;
+  box-shadow:0 6px 18px rgba(0,0,0,0.35);
+  transition:background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+.map-modal-close:hover{
+  background:var(--coral-pop);
+  color:white;
+  transform:rotate(90deg);
+}
+
+@media (max-width:600px){
+  .map-modal-close{ top:-12px; right:0; }
+}
+
+/* ============================================================
+   PAYMENT PROCESSING MODAL  (Confirming Payment → Success)
+   ============================================================ */
+
+/* --- Overlay --- */
+.payment-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 3000;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+.payment-modal.is-active {
+  display: flex;
+}
+.payment-modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(2, 24, 32, 0.85);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+/* --- Card --- */
+.payment-modal-card {
+  position: relative;
+  z-index: 2;
+  background: linear-gradient(145deg, #0b2a36 0%, #0d3545 100%);
+  border: 1px solid rgba(0, 212, 255, 0.2);
+  border-radius: 24px;
+  padding: 50px 42px 42px;
+  width: 100%;
+  max-width: 440px;
+  text-align: center;
+  box-shadow:
+    0 0 0 1px rgba(0, 212, 255, 0.1),
+    0 32px 80px rgba(0, 0, 0, 0.6),
+    0 0 60px rgba(0, 180, 255, 0.08);
+}
+
+/* --- Shared phase helpers --- */
+.pay-modal-phase {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+}
+.pay-modal-phase.hidden {
+  display: none;
+}
+
+/* Fade OUT (loading → success transition) */
+.pay-modal-phase.phase-out {
+  animation: payPhaseOut 0.35s ease forwards;
+}
+@keyframes payPhaseOut {
+  from { opacity: 1; transform: scale(1); }
+  to   { opacity: 0; transform: scale(0.92); }
+}
+
+/* Fade IN (success state appearing) */
+.pay-modal-phase.phase-in {
+  animation: payPhaseIn 0.5s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+@keyframes payPhaseIn {
+  from { opacity: 0; transform: scale(0.88) translateY(12px); }
+  to   { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+/* --- Loading spinner --- */
+.pay-spinner-ring {
+  position: relative;
+  width: 90px;
+  height: 90px;
+  flex-shrink: 0;
+}
+.pay-spinner-ring svg {
+  width: 90px;
+  height: 90px;
+}
+.spinner-arc {
+  transform-origin: center;
+  animation: spinArc 1.1s linear infinite;
+}
+@keyframes spinArc {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+/* Wave emoji centred inside spinner */
+.pay-spinner-wave {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  animation: waveBob 1.8s ease-in-out infinite;
+}
+@keyframes waveBob {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-5px); }
+}
+
+/* --- Modal Typography --- */
+.pay-modal-title {
+  font-family: 'Baloo 2', sans-serif;
+  font-size: 1.55rem;
+  font-weight: 700;
+  color: #e0f7ff;
+  margin: 0;
+  line-height: 1.2;
+}
+.pay-modal-title.success {
+  background: linear-gradient(135deg, #00e676 0%, #00bcd4 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.pay-modal-sub {
+  font-family: 'Work Sans', sans-serif;
+  font-size: 0.95rem;
+  color: rgba(160, 220, 235, 0.85);
+  margin: 0;
+  line-height: 1.55;
+}
+
+/* --- Bouncing dots --- */
+.pay-dots {
+  display: flex;
+  gap: 8px;
+}
+.pay-dots span {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(0, 212, 255, 0.65);
+  animation: dotPulse 1.3s ease-in-out infinite;
+}
+.pay-dots span:nth-child(2) { animation-delay: 0.22s; }
+.pay-dots span:nth-child(3) { animation-delay: 0.44s; }
+@keyframes dotPulse {
+  0%, 80%, 100% { transform: scale(0.7); opacity: 0.5; }
+  40%           { transform: scale(1.2); opacity: 1; }
+}
+
+/* --- Success icon (animated checkmark) --- */
+.pay-success-icon {
+  width: 90px;
+  height: 90px;
+  flex-shrink: 0;
+  filter: drop-shadow(0 0 18px rgba(0, 230, 118, 0.45));
+}
+.pay-success-icon svg {
+  width: 90px;
+  height: 90px;
+}
+.check-mark {
+  stroke-dasharray: 60;
+  stroke-dashoffset: 60;
+  animation: drawCheck 0.55s cubic-bezier(0.22, 1, 0.36, 1) 0.1s forwards;
+}
+@keyframes drawCheck {
+  to { stroke-dashoffset: 0; }
+}
+
+/* --- Actions inside modal --- */
+.payment-modal-card .success-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+  margin-top: 6px;
+}
+.payment-modal-card .modal-home-btn {
+  background: var(--coral-pop);
+  color: #ffffff;
+  font-family: 'Baloo 2', sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  padding: 13px 20px;
+  border-radius: 10px;
+  text-decoration: none;
+  display: inline-block;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+.payment-modal-card .modal-home-btn:hover {
+  background: #e85a4b;
+  transform: translateY(-2px);
+}
+.payment-modal-card .modal-dismiss-btn {
+  background: transparent;
+  color: rgba(160, 220, 235, 0.8);
+  border: 1px solid rgba(0, 212, 255, 0.25);
+  border-radius: 999px;
+  padding: 11px 20px;
+  font-size: 0.95rem;
+  font-family: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.payment-modal-card .modal-dismiss-btn:hover {
+  background: rgba(0, 212, 255, 0.1);
+  color: #ffffff;
+  border-color: rgba(0, 212, 255, 0.6);
+}
+
+/* --- Responsive --- */
+@media (max-width: 480px) {
+  .payment-modal-card {
+    padding: 40px 24px 32px;
+    border-radius: 20px;
+  }
+  .pay-modal-title { font-size: 1.35rem; }
+}
+
+/* ================================================================
+   MOBILE RESPONSIVE — Full-site breakpoints
+   ================================================================ */
+
+/* ---- Tablet / Large Phone (≤ 768px) ---- */
+@media (max-width: 768px) {
+
+  /* Nav */
+  .nav { padding: 14px 5vw; }
+  .nav-cta { font-size: 13px; padding: 8px 14px; }
+
+  /* Hero */
+  .hero { padding: 100px 0 80px; min-height: 90vh; }
+  .hero-content { margin-left: 6vw; margin-right: 6vw; max-width: 100%; }
+  .hero h1 { font-size: clamp(36px, 10vw, 60px); }
+  .hero p { font-size: clamp(15px, 4vw, 18px); max-width: 100%; }
+
+  /* Hero CTA group — wrap and stretch buttons full width on very small */
+  .hero-cta-group { flex-direction: column; align-items: flex-start; gap: 12px; }
+  .ticket-btn, .hero-map-btn { width: 100%; max-width: 340px; justify-content: center; }
+
+  /* Sections */
+  section { padding: 60px 6vw; }
+  .section-head { margin-bottom: 32px; }
+
+  /* Attractions grid — 2 cols on tablet, full width fine on grid */
+  .attractions-grid { grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 18px; }
+
+  /* Map teaser — stack vertically */
+  .map-teaser-card {
+    grid-template-columns: 1fr;
+  }
+  .map-teaser-preview { min-height: 220px; }
+  .map-teaser-details { padding: 24px 20px; }
+
+  /* Ticket stubs — 2-up on tablet */
+  .tickets-row { grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 22px; }
+  /* Remove decorative notches on mobile (they overflow on narrow screens) */
+  .stub::before, .stub::after { display: none; }
+  .stub { padding: 24px 20px 20px; }
+  /* Reset the slight rotations that cause overflow on small screens */
+  .tickets-row .stub { transform: none !important; margin-top: 0 !important; }
+  .stub:hover { transform: translateY(-4px) !important; }
+
+  /* Info strip — 2×2 grid */
+  .info-strip { gap: 20px; justify-content: flex-start; }
+  .info-item { flex: 0 0 calc(50% - 10px); min-width: 0; }
+
+  /* Splash reports */
+  .reports-grid { grid-template-columns: 1fr; gap: 16px; }
+
+  /* Footer */
+  .footer-top { gap: 24px; }
+  .footer-links { gap: 24px; }
+
+  /* Map page */
+  .map-header { padding: 110px 6vw 40px; }
+  .map-section { padding: 36px 6vw 60px; }
+  .map-toolbar { flex-direction: column; align-items: flex-start; }
+  .map-toolbar-buttons { width: 100%; }
+  .btn-secondary { flex: 1; justify-content: center; }
+  .map-highlights { grid-template-columns: 1fr 1fr; gap: 14px; }
+}
+
+/* ---- Small Phone (≤ 480px) ---- */
+@media (max-width: 480px) {
+
+  /* Nav */
+  .nav { padding: 12px 5vw; }
+  .logo { font-size: 20px; }
+
+  /* Hero */
+  .hero { padding: 90px 0 70px; }
+  .hero-content { margin-left: 5vw; margin-right: 5vw; }
+  .hero h1 { font-size: clamp(32px, 11vw, 52px); }
+  .hero p { font-size: 15px; }
+  .ticket-btn { padding: 12px 18px 12px 16px; font-size: 14px; }
+  .ticket-btn::after { left: 30px; }
+  .stub-code { font-size: 10px; padding-left: 14px; }
+
+  /* Sections */
+  section { padding: 50px 5vw; }
+  .section-head h2 { font-size: clamp(24px, 7vw, 36px); }
+
+  /* Attractions — single column */
+  .attractions-grid { grid-template-columns: 1fr; }
+  .ride-img { height: 200px; }
+
+  /* Map teaser */
+  .map-teaser-preview { min-height: 180px; }
+  .map-teaser-cta-wrap { flex-direction: column; }
+  .map-action-btn, .map-download-pill { width: 100%; justify-content: center; text-align: center; }
+
+  /* Ticket stubs — single column */
+  .tickets-row { grid-template-columns: 1fr; }
+
+  /* Info strip — single column */
+  .info-strip { padding: 30px 5vw; }
+  .info-item { flex: 0 0 100%; }
+  .info-item .value { font-size: 17px; }
+
+  /* Footer */
+  .footer { padding: 40px 5vw 24px; }
+  .footer-top { flex-direction: column; }
+  .footer-links { flex-direction: column; gap: 20px; }
+  .footer-bottom { flex-direction: column; text-align: center; gap: 4px; }
+
+  /* Map page */
+  .map-header { padding: 95px 5vw 32px; }
+  .map-highlights { grid-template-columns: 1fr; }
+  .map-toolbar-buttons { flex-direction: column; }
+
+  /* Tickets page */
+  .tickets-page-grid { grid-template-columns: 1fr; }
+  .faq-grid { grid-template-columns: 1fr; }
+
+  /* Checkout */
+  .checkout-wrap { padding: 30px 5vw 60px; }
+  .pay-card { padding: 20px 16px; }
+  .summary-stub { padding: 20px 16px; }
+}
+
+/* ---- Very Small Phone (≤ 380px) ---- */
+@media (max-width: 380px) {
+  .hero h1 { font-size: 30px; }
+  .ticket-btn, .hero-map-btn { font-size: 13px; }
+  .stub-name { font-size: 19px; }
+  .stub-price { font-size: 22px; }
+  .info-item .value { font-size: 16px; }
+  .nav-cta { display: none; } /* Only hamburger remains at tiny widths */
+}

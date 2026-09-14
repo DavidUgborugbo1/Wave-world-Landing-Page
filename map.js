@@ -1,4 +1,4 @@
-// WaveWorld Park Map: In-page image modal (replaces the old new-tab link)
+// WaveWorld Park Map: In-page image modal
 document.addEventListener("DOMContentLoaded", () => {
   const mapImg = document.getElementById("mapPreviewImg");
   const openFullViewBtn = document.getElementById("openFullViewBtn");
@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
   if (!modal) return;
 
   const openModal = (e) => {
-    if (e) e.preventDefault(); // stop the link from navigating/opening a new tab
+    if (e) e.preventDefault();
     modal.classList.add("is-active");
     modal.setAttribute("aria-hidden", "false");
     document.body.classList.add("modal-open");
@@ -28,7 +28,6 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // "Open Full View" button opens the modal instead of navigating away.
-  // href is left intact as a fallback in case JS fails to load.
   if (openFullViewBtn) openFullViewBtn.addEventListener("click", openModal);
 
   if (modalBackdrop) modalBackdrop.addEventListener("click", closeModal);

@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tickets & Passes — WaveWorld Water Park</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Work+Sans:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <nav class="nav">
+    <a href="index.html" class="logo">Wave<span>World</span></a>
+    
+    <div class="nav-links">
+      <a href="index.html#attractions">Attractions</a>
+      <a href="tickets.html" class="active-nav">Tickets</a>
+      <a href="index.html#info">Plan Your Day</a>
+      <a href="index.html#reports">Splash Reports</a>
+      <a href="map.html" class="nav-map-link">🗺️ Map Guide</a>
+    </div>
+
+    <div class="nav-actions">
+      <a href="map.html" class="nav-quick-map" title="View Park Map">🗺️ <span>Park Map</span></a>
+      <a href="tickets.html" class="nav-cta">Get Tickets</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+    </div>
+
+  </nav>
+
+  <!-- MOBILE DROPDOWN MENU -->
+  <div class="mobile-nav" id="mobileNav">
+    <div class="mobile-nav-inner">
+      <a href="map.html" class="mobile-map-featured">
+        <span class="mobile-map-icon">🗺️</span>
+        <div class="mobile-map-text">
+          <strong>Interactive Park Map</strong>
+          <small>Explore 40 acres of rides, pools &amp; cabanas</small>
+        </div>
+        <span class="mobile-map-arrow">→</span>
+      </a>
+      <a href="index.html#attractions" class="mobile-nav-link">🌊 Attractions &amp; Rides</a>
+      <a href="tickets.html" class="mobile-nav-link active-nav">🎫 All Tickets &amp; Passes</a>
+      <a href="index.html#info" class="mobile-nav-link">🕒 Hours &amp; Visitor Info</a>
+      <a href="index.html#reports" class="mobile-nav-link">💬 Splash Reports</a>
+    </div>
+  </div>
+
+  <!-- TICKETS HERO HEADER -->
+  <header class="map-header tickets-header">
+    <div class="map-header-content">
+      <div class="map-breadcrumb">
+        <a href="index.html">← Back to Overview</a>
+      </div>
+      <span class="eyebrow">NO SURPRISE FEES · REAL TICKET STUBS</span>
+      <h1>Park <em>Tickets</em> & Season Passes</h1>
+      <p>Choose the pass that matches your pace. From casual afternoon splash sessions to VIP fast-lane access and full season passes.</p>
+    </div>
+  </header>
+
+  <!-- TICKETS MAIN SECTION -->
+  <section class="tickets-page-section">
+    
+    <div class="section-head text-center">
+      <span class="eyebrow-dark">All Pass Options</span>
+      <h2>Pick your wristband.</h2>
+      <p>Every ticket purchase generates an immediate digital barcode wristband sent directly to your email or mobile wallet.</p>
+    </div>
+
+    <!-- TICKETS GRID -->
+    <div class="tickets-row tickets-page-grid">
+
+      <!-- 1. DAY PASS -->
+      <div class="stub">
+        <div class="stub-top">
+          <div>
+            <div class="stub-park">WAVEWORLD · ADM</div>
+            <div class="stub-name">Single Day Pass</div>
+          </div>
+          <div class="stub-price">$42</div>
+        </div>
+        <ul>
+          <li>Full park access (10AM – 7PM)</li>
+          <li>All 6 wave pools & body slides</li>
+          <li>One free tube rental included</li>
+          <li>Free on-site parking</li>
+        </ul>
+        <a href="checkout.html?pass=day" class="stub-cta">Select Day Pass</a>
+        <div class="stub-barcode"></div>
+      </div>
+
+      <!-- 2. SEASON PASS (FEATURED) -->
+      <div class="stub featured-stub">
+        <span class="best-value">BEST VALUE</span>
+        <div class="stub-top">
+          <div>
+            <div class="stub-park">WAVEWORLD · ADM</div>
+            <div class="stub-name">Season Pass</div>
+          </div>
+          <div class="stub-price">$119</div>
+        </div>
+        <ul>
+          <li>Unlimited park visits all season long</li>
+          <li>FastTrack skip-the-line lane access</li>
+          <li>15% discount on food & cabana rentals</li>
+          <li>2 Free buddy passes per season</li>
+        </ul>
+        <a href="checkout.html?pass=season" class="stub-cta">Select Season Pass</a>
+        <div class="stub-barcode"></div>
+      </div>
+
+      <!-- 3. FAMILY BUNDLE -->
+      <div class="stub">
+        <div class="stub-top">
+          <div>
+            <div class="stub-park">WAVEWORLD · ADM</div>
+            <div class="stub-name">Family 4-Pack</div>
+          </div>
+          <div class="stub-price">$149</div>
+        </div>
+        <ul>
+          <li>4 single-day passes for any date</li>
+          <li>Shaded cabana lounger (2hr block)</li>
+          <li>4 unlimited refill soda wristbands</li>
+          <li>Free on-site premium parking</li>
+        </ul>
+        <a href="checkout.html?pass=family" class="stub-cta">Select Family Bundle</a>
+        <div class="stub-barcode"></div>
+      </div>
+
+      <!-- 4. VIP FASTTRACK -->
+      <div class="stub">
+        <div class="stub-top">
+          <div>
+            <div class="stub-park">WAVEWORLD · VIP</div>
+            <div class="stub-name">VIP FastTrack</div>
+          </div>
+          <div class="stub-price">$79</div>
+        </div>
+        <ul>
+          <li>Full park admission + zero wait lines</li>
+          <li>Dedicated VIP slide express lanes</li>
+          <li>Reserved poolside lounger with umbrella</li>
+          <li>Free locker rental & towel service</li>
+        </ul>
+        <a href="checkout.html?pass=vip" class="stub-cta">Select VIP Pass</a>
+        <div class="stub-barcode"></div>
+      </div>
+
+      <!-- 5. TWILIGHT PASS -->
+      <div class="stub">
+        <div class="stub-top">
+          <div>
+            <div class="stub-park">WAVEWORLD · ADM</div>
+            <div class="stub-name">Sunset Twilight</div>
+          </div>
+          <div class="stub-price">$28</div>
+        </div>
+        <ul>
+          <li>Entry from 4:00PM to 7:00PM close</li>
+          <li>Enjoy golden hour waves & shorter lines</li>
+          <li>All pools and slides open</li>
+          <li>Perfect for after-work quick dips</li>
+        </ul>
+        <a href="checkout.html?pass=twilight" class="stub-cta">Select Twilight Pass</a>
+        <div class="stub-barcode"></div>
+      </div>
+
+      <!-- 6. CABANA OASIS DAY -->
+      <div class="stub">
+        <div class="stub-top">
+          <div>
+            <div class="stub-park">WAVEWORLD · LUX</div>
+            <div class="stub-name">Cabana Oasis</div>
+          </div>
+          <div class="stub-price">$199</div>
+        </div>
+        <ul>
+          <li>Private shaded cabana for up to 6 guests</li>
+          <li>Personal cabana host & food delivery</li>
+          <li>Mini-fridge with chilled waters & fruits</li>
+          <li>Park admission included for 2 guests</li>
+        </ul>
+        <a href="checkout.html?pass=cabana" class="stub-cta">Select Cabana Pass</a>
+        <div class="stub-barcode"></div>
+      </div>
+
+    </div>
+
+    <!-- COMPARISON TABLE SECTION -->
+    <div class="comparison-container">
+      <div class="section-head">
+        <span class="eyebrow-dark">Pass Perks Comparison</span>
+        <h2>Compare benefits at a glance.</h2>
+      </div>
+
+      <div class="table-responsive-wrapper">
+        <table class="perks-table">
+          <thead>
+            <tr>
+              <th>Benefit / Feature</th>
+              <th>Twilight</th>
+              <th>Day Pass</th>
+              <th>VIP Pass</th>
+              <th class="table-highlight">Season Pass</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Park Hours</td>
+              <td>4PM – 7PM</td>
+              <td>10AM – 7PM</td>
+              <td>10AM – 7PM</td>
+              <td class="table-highlight">All Season (10AM – 7PM)</td>
+            </tr>
+            <tr>
+              <td>All Slides & Wave Pools</td>
+              <td>✓</td>
+              <td>✓</td>
+              <td>✓</td>
+              <td class="table-highlight">✓</td>
+            </tr>
+            <tr>
+              <td>FastTrack Skip-the-Line</td>
+              <td>—</td>
+              <td>—</td>
+              <td>✓ (Unlimited)</td>
+              <td class="table-highlight">✓ (Express Lane)</td>
+            </tr>
+            <tr>
+              <td>Free Tube & Locker Rental</td>
+              <td>—</td>
+              <td>Tube Only</td>
+              <td>Tube + Locker</td>
+              <td class="table-highlight">Tube + Locker</td>
+            </tr>
+            <tr>
+              <td>Food & Rental Discounts</td>
+              <td>—</td>
+              <td>—</td>
+              <td>10% Off</td>
+              <td class="table-highlight">15% Off</td>
+            </tr>
+            <tr>
+              <td>Free Parking</td>
+              <td>✓</td>
+              <td>✓</td>
+              <td>VIP Lot</td>
+              <td class="table-highlight">Season Pass Lot</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- TICKET FAQS -->
+    <div class="ticket-faq-section">
+      <div class="section-head">
+        <span class="eyebrow-dark">Frequently Asked Questions</span>
+        <h2>Got ticket questions?</h2>
+      </div>
+
+      <div class="faq-grid">
+        <div class="faq-card">
+          <h4>🎟 How do I receive my wristband?</h4>
+          <p>Upon completing checkout, an electronic barcode ticket is immediately sent to your email. At the park gate, scan it at any turnstile or kiosk to receive your waterproof wristband.</p>
+        </div>
+        <div class="faq-card">
+          <h4>🌧 What is the Rain Guarantee policy?</h4>
+          <p>If extreme weather closes the rides for more than 90 consecutive minutes during your visit, we will issue a complimentary return day pass valid for the rest of the season.</p>
+        </div>
+        <div class="faq-card">
+          <h4>👶 Do young children need admission?</h4>
+          <p>Children aged 2 and under enter completely free! Life jackets and toddler splash lagoon zones are provided at no charge.</p>
+        </div>
+        <div class="faq-card">
+          <h4>🔁 Can I transfer or reschedule my tickets?</h4>
+          <p>Yes! Tickets can be rescheduled for any available date in the current season up to 24 hours before your selected visit date.</p>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- MOBILE NAV BACKDROP -->
+  <div class="mobile-nav-backdrop" id="mobileNavBackdrop"></div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-top">
+      <a href="index.html" class="footer-logo">Wave<span>World</span></a>
+      <div class="footer-links">
+        <div class="footer-col">
+          <h4>Park</h4>
+          <a href="index.html#attractions">Attractions</a>
+          <a href="tickets.html">Tickets & Passes</a>
+          <a href="map.html">Park Map</a>
+          <a href="index.html#info">Hours & Location</a>
+        </div>
+        <div class="footer-col">
+          <h4>Plan</h4>
+          <a href="#">Group Bookings</a>
+          <a href="#">Birthday Parties</a>
+          <a href="#">Cabana Rentals</a>
+        </div>
+        <div class="footer-col">
+          <h4>Support</h4>
+          <a href="#">Safety Guidelines</a>
+          <a href="#">Lost & Found</a>
+          <a href="#">Contact Us</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 WaveWorld Water Park. All rights reserved.</span>
+      <span>27 Shoreline Avenue · Open daily, rain or shine.</span>
+    </div>
+  </footer>
+
+  <!-- EXTERNAL SCRIPTS -->
+  <script src="mobile_nav.js" defer></script>
+</body>
+</html>

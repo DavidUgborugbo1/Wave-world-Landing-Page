@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Checkout — WaveWorld Water Park</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Work+Sans:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- TOP BAR -->
+  <div class="topbar">
+    <a href="index.html" class="logo">Wave<span>World</span></a>
+    <a href="tickets.html" class="back-link">← Back to tickets</a>
+  </div>
+
+  <div class="checkout-wrap">
+
+    <!-- ORDER SUMMARY -->
+    <div>
+      <h1 class="page-title">Almost there!</h1>
+      <p class="page-sub">Review your pass, choose your payment method, and get your wristbands.</p>
+
+      <div class="summary-stub">
+        <div class="stub-park" id="ticketPark">WAVEWORLD · ADM</div>
+        <div class="stub-name" id="ticketName">Day Pass</div>
+        <div class="stub-price-row">
+          <div class="stub-price" id="ticketPriceVal">$42</div>
+          <div class="stub-per">per pass</div>
+        </div>
+
+        <div class="qty-row">
+          <div class="qty-label">Quantity</div>
+          <div class="qty-control">
+            <button class="qty-btn" type="button" id="qtyMinus" aria-label="Decrease quantity">−</button>
+            <span class="qty-num" id="qtyNum">1</span>
+            <button class="qty-btn" type="button" id="qtyPlus" aria-label="Increase quantity">+</button>
+          </div>
+        </div>
+
+        <div class="date-row">
+          <label for="visitDate">First visit date</label>
+          <input type="date" id="visitDate">
+        </div>
+
+        <div class="totals">
+          <div class="totals-line"><span>Subtotal</span><span id="subtotalVal">$42.00</span></div>
+          <div class="totals-line"><span>Booking fee</span><span id="bookingFeeVal">$3.50</span></div>
+          <div class="totals-line grand"><span>Total due</span><span id="totalDueVal">$45.50</span></div>
+        </div>
+
+        <div class="stub-barcode"></div>
+      </div>
+    </div>
+
+    <!-- PAYMENT SECTION -->
+    <div class="pay-card">
+      <h3>Select Payment Method</h3>
+
+      <!-- PAYMENT METHOD TABS -->
+      <div class="payment-method-selector" role="tablist">
+        <button type="button" class="method-tab active" id="tabCard" role="tab" aria-selected="true">
+          <span class="method-icon">💳</span>
+          <span class="method-label">Debit / Credit Card</span>
+        </button>
+        <button type="button" class="method-tab" id="tabBank" role="tab" aria-selected="false">
+          <span class="method-icon">🏦</span>
+          <span class="method-label">Bank Transfer</span>
+        </button>
+      </div>
+
+      <!-- PANEL 1: CARD PAYMENT -->
+      <div id="cardPaymentPanel" class="pay-panel">
+        <form id="cardForm">
+          <div class="field">
+            <label for="email">Email (for your e-ticket)</label>
+            <input type="email" id="email" placeholder="you@example.com" required>
+          </div>
+
+          <div class="field">
+            <label for="cardName">Card Name</label>
+            <input type="text" id="cardName" placeholder="Jane Doe" required>
+          </div>
+
+          <div class="field">
+            <label for="cardNumber">Card number</label>
+            <input type="text" id="cardNumber" placeholder="1234 5678 9012 3456" inputmode="numeric" required>
+            <div class="card-brands">
+              <span class="card-brand">VISA</span>
+              <span class="card-brand">MASTERCARD</span>
+              <span class="card-brand">AMEX</span>
+              <span class="card-brand">VERVE</span>
+            </div>
+          </div>
+
+          <div class="field-row three">
+            <div class="field">
+              <label for="expMonth">Exp. month</label>
+              <input type="text" id="expMonth" placeholder="MM" maxlength="2" required>
+            </div>
+            <div class="field">
+              <label for="expYear">Exp. year</label>
+              <input type="text" id="expYear" placeholder="YY" maxlength="2" required>
+            </div>
+            <div class="field">
+              <label for="cvv">CVV</label>
+              <input type="text" id="cvv" placeholder="123" maxlength="4" required>
+            </div>
+          </div>
+
+          <div class="field-row">
+            <div class="field">
+              <label for="zip">Billing ZIP / postal code</label>
+              <input type="text" id="zip" placeholder="10001" required>
+            </div>
+          </div>
+
+          <button class="pay-btn" type="submit" id="payBtn">💳 Pay $45.50 with Card</button>
+          <div class="secure-note">🔒 Payments are encrypted and secure</div>
+        </form>
+      </div>
+
+      <!-- PANEL 2: BANK TRANSFER -->
+      <div id="bankPaymentPanel" class="pay-panel hidden">
+        <div class="bank-instruction-box">
+          <p class="bank-instruction-lead">Transfer the total due from your mobile banking app or USSD to the official WaveWorld park account below:</p>
+
+          <div class="bank-account-card">
+            <div class="bank-info-row">
+              <span class="bank-info-label">Bank Name</span>
+              <span class="bank-info-value">PayPal</span>
+            </div>
+            <div class="bank-info-row">
+              <span class="bank-info-label">Account Name</span>
+              <span class="bank-info-value">WaveWorld Waterparks Ltd</span>
+            </div>
+            <div class="bank-info-row highlighted">
+              <div>
+                <span class="bank-info-label">Account Number</span>
+                <span class="bank-info-value mono-num" id="accNumberVal">0123456789</span>
+              </div>
+              <button type="button" class="copy-pill-btn" id="copyAccBtn">📋 Copy</button>
+            </div>
+            <div class="bank-info-row highlighted">
+              <div>
+                <span class="bank-info-label">Routing Number</span>
+                <span class="bank-info-value mono-num" id="refCodeVal">12-84920-192</span>
+              </div>
+              <button type="button" class="copy-pill-btn" id="copyRefBtn">📋 Copy</button>
+            </div>
+            <div class="bank-info-row total-transfer-row">
+              <span class="bank-info-label">Exact Amount</span>
+              <span class="bank-info-amount" id="transferAmountVal">$45.50</span>
+            </div>
+          </div>
+        </div>
+
+        <form id="bankForm">
+          <div class="field">
+            <label for="bankEmail">Email (where e-ticket will be sent)</label>
+            <input type="email" id="bankEmail" placeholder="you@example.com" required>
+          </div>
+
+          <div class="field">
+            <label for="senderName">Sender / Account Holder Name</label>
+            <input type="text" id="senderName" placeholder="Name on the bank account you sent from" required>
+          </div>
+
+          <button class="pay-btn bank-confirm-btn" type="submit" id="bankPayBtn">✅ I Have Transferred $45.50</button>
+          <div class="secure-note">⚡ Automated instant confirmation upon receipt</div>
+        </form>
+      </div>
+
+      <p class="fine-print">This is a demonstration checkout screen — passes are confirmed automatically.<br>Wristbands are non-refundable but transferable up to 24 hours prior to visit.</p>
+    </div>
+
+  </div>
+
+  <!-- PAYMENT PROCESSING / SUCCESS MODAL -->
+  <div id="paymentModal" class="payment-modal" aria-hidden="true" role="dialog" aria-label="Payment Status">
+    <div class="payment-modal-backdrop" id="paymentModalBackdrop"></div>
+    <div class="payment-modal-card">
+
+      <!-- PHASE 1: Loading / Confirming -->
+      <div id="payModalLoading" class="pay-modal-phase">
+        <div class="pay-spinner-ring">
+          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <circle cx="32" cy="32" r="26" stroke="rgba(255,255,255,0.15)" stroke-width="5"/>
+            <circle class="spinner-arc" cx="32" cy="32" r="26" stroke="url(#spinGrad)" stroke-width="5"
+              stroke-linecap="round" stroke-dasharray="60 104"/>
+            <defs>
+              <linearGradient id="spinGrad" x1="0" y1="0" x2="64" y2="64" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stop-color="#00d4ff"/>
+                <stop offset="100%" stop-color="#0af"/>
+              </linearGradient>
+            </defs>
+          </svg>
+          <span class="pay-spinner-wave" aria-hidden="true">🌊</span>
+        </div>
+        <h2 class="pay-modal-title">Confirming Payment…</h2>
+        <p class="pay-modal-sub">Please wait while we securely process your transaction.</p>
+        <div class="pay-dots">
+          <span></span><span></span><span></span>
+        </div>
+      </div>
+
+      <!-- PHASE 2: Success -->
+      <div id="payModalSuccess" class="pay-modal-phase hidden">
+        <div class="pay-success-icon">
+          <svg viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <circle cx="36" cy="36" r="34" stroke="url(#successGrad)" stroke-width="4"/>
+            <polyline class="check-mark" points="20,37 31,48 52,26" stroke="url(#successGrad)"
+              stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <defs>
+              <linearGradient id="successGrad" x1="0" y1="0" x2="72" y2="72" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stop-color="#00e676"/>
+                <stop offset="100%" stop-color="#00bcd4"/>
+              </linearGradient>
+            </defs>
+          </svg>
+        </div>
+        <h2 class="pay-modal-title success" id="paySuccessTitle">Payment Successful!</h2>
+        <p class="pay-modal-sub" id="paySuccessMessage">Your tickets have been confirmed.</p>
+        <div class="success-actions">
+          <a href="index.html" class="pay-btn modal-home-btn" id="payModalHomeBtn">Close</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- EXTERNAL SCRIPTS -->
+  <script src="checkout.js" defer></script>
+</body>
+</html>
